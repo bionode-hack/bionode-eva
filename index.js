@@ -15,6 +15,12 @@ var options = commandLineArgs(optionDefinitions);
 //   go();
 // }
 
+if (!options.category && !options.ids && !options.resource && !options.fields) {
+  options.category = 'meta';
+  options.ids = 'studies';
+  options.resource = 'all';
+}
+
 var apiPath = options.category + '/' + options.ids + '/' + options.resource;
 
 var urlObject = {
