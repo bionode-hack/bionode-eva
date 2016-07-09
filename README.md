@@ -8,13 +8,22 @@ API notes: https://github.com/ebivariation/eva/wiki
 
 (The instructions below are for EVA but, according to the wiki, if the argument 'structural=true' is added to the intial queries DGVA is searched instead.)
 
+### Installation
+
+`npm install -g bionode-eva`
+
+
 ### Example Requests
 
-1) node index.js --category meta --ids studies --resource all   
-2) node index.js --category files --ids all --filters species=mmusculus_grcm38    
-or short option   
-3) node index.js -c meta -i studies -r all
-
+long options			
+`bionode-eva --category meta --ids studies --resource all `		
+`bionode-eva --category files --ids all --filters species=mmusculus_grcm38 `		
+short option   			
+`bionode-eva -c meta -i studies -r all`		
+path option		
+`bionode-eva -p meta/studies/stats`		
+`bionode-eva -p studies/PRJEB4019/files?species=hsapiens_grch37`		
+for more query options please see below or look at [eva wiki](http://wwwdev.ebi.ac.uk/eva/webservices/api/#/)
 
 ```javascript
 const optionDefinitions = [
@@ -39,7 +48,7 @@ these options could provide count or list as resources
 id of the study and summary of the selected as resources
 
 
-more information can be found at [eva api wiki](https://github.com/ebivariation/eva/wiki)
+more information can be found at [eva api wiki](https://github.com/ebivariation/ eva/wiki) and [eva wiki](http://wwwdev.ebi.ac.uk/eva/webservices/api/#/)
 
 
 
