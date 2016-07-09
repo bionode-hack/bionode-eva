@@ -9,8 +9,38 @@ API notes: https://github.com/ebivariation/eva/wiki
 (The instructions below are for EVA but, according to the wiki, if the argument 'structural=true' is added to the intial queries DGVA is searched instead.)
 
 ### Example Requests
+
 1) node index.js --category meta --ids studies --resource all
 2) node index.js --category files --ids all --filters species=mmusculus_grcm38
+or short option
+3) node index.js -c meta -i studies -r all
+
+
+```javascript
+const optionDefinitions = [
+  {name: 'category', alias: 'c', type: String},
+  {name: 'ids', alias: 'i', type: String},
+  {name: 'resource', alias: 'r', type: String, defaultValue: ''},
+  {name: 'filters', alias: 'f', type: String, defaultValue: ''}
+];
+```
+
+options provide refined query paths
+
+if no options are given, api will retrieve information from all studies [http://www.ebi.ac.uk/eva/webservices/rest/v1/meta/studies/all](http://www.ebi.ac.uk/eva/webservices/rest/v1/meta/studies/all) 
+
+`ids` options that could be given under _meta_ `category`
+studies, species, files
+which could provide count or list of resources
+
+
+`ids` options that could be given under _studies_ `category`
+id of the study and summary of the selected as resources
+
+
+more information can be found at [eva api wiki](https://github.com/ebivariation/eva/wiki)
+
+
 
 Steps to metadata
 -----------------
