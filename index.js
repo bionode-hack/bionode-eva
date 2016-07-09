@@ -15,6 +15,11 @@ var apiPath;
 
 // check the args
 if (options.path) {
+  if (options.path.indexOf('?') !== -1) {
+    var temp = options.path.split('?');
+    options.path = temp[0];
+    options.filters = temp[1];
+  }
   apiPath = options.path;
 } else {
   // if no args are used, default to /meta/studies/all
