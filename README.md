@@ -8,6 +8,10 @@ API notes: https://github.com/ebivariation/eva/wiki
 
 (The instructions below are for EVA but, according to the wiki, if the argument 'structural=true' is added to the intial queries DGVA is searched instead.)
 
+### Example Requests
+1) node index.js --category meta --ids studies --resource all
+2) node index.js --category files --ids all --fields species=mmusculus_grcm38
+
 Steps to metadata
 -----------------
 
@@ -37,14 +41,14 @@ http://www.ebi.ac.uk/eva/webservices/rest/v1/studies/PRJEB4019/files?species=hsa
 
 response: https://github.com/bionode-hack/bionode-eva/blob/master/example_responses/PRJEB4019_files.json
 
-c) Check whether there is more than one fileName within result. In this example there are 25 - one per chromosome - but in the case of PRJEB8661 (ExAC) there is only one. 
+c) Check whether there is more than one fileName within result. In this example there are 25 - one per chromosome - but in the case of PRJEB8661 (ExAC) there is only one.
 
 d) Retrieve the URL for the first fileName (ALL.chr5.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.vcf.gz):
 http://www.ebi.ac.uk/eva/webservices/rest/v1/files/ALL.chr5.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.vcf.gz/url
 
 response: https://github.com/bionode-hack/bionode-eva/blob/master/example_responses/ALL.chr5.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.vcf.gz_url.json
 
-e) Since there were multiple fileNames, take the dirname of the extracted URL (the 'result' value). 
+e) Since there were multiple fileNames, take the dirname of the extracted URL (the 'result' value).
 The 'result' value in this example is ftp://ftp.sra.ebi.ac.uk/vol1/ERZ015/ERZ015356/ALL.chr5.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.vcf.gz, so use URL 'ftp://ftp.sra.ebi.ac.uk/vol1/ERZ015/ERZ015356/'
 
 In the case of a single fileName (as in ExAC), derive the URL needed from the URL retrieved for the single fileName as follows (due to a possible EVA bug):
@@ -62,9 +66,9 @@ URL: Use the URL extracted in steps 2d and 2e above.
 
 Title: Use the 'name' from the summary returned in 2a.
 
-Description: Use the 'description' from the summary returned in 2a. 
+Description: Use the 'description' from the summary returned in 2a.
 
-Technology: Use the 'platform' from the summary returned in 2a. 
+Technology: Use the 'platform' from the summary returned in 2a.
 
 Assay type: Use the 'experimentType' from the summary returned in 2a.
 

@@ -20,6 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "command-line-args": "^3.0.0",
     "jsonstream": "^1.0.3",
     "request": "^2.73.0",
     "split2": "^2.1.0",
