@@ -10,9 +10,9 @@ API notes: https://github.com/ebivariation/eva/wiki
 
 ### Example Requests
 
-1) node index.js --category meta --ids studies --resource all
-2) node index.js --category files --ids all --filters species=mmusculus_grcm38
-or short option
+1) node index.js --category meta --ids studies --resource all   
+2) node index.js --category files --ids all --filters species=mmusculus_grcm38    
+or short option   
 3) node index.js -c meta -i studies -r all
 
 
