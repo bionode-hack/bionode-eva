@@ -16,6 +16,10 @@ if (!options.category && !options.ids && !options.resource && !options.filters) 
   options.category = 'meta';
   options.ids = 'studies';
   options.resource = 'all';
+} else if (!options.category) {
+  console.error('Please provide a category');
+} else if (!options.ids) {
+  console.error('Please provide IDs');
 }
 
 var apiPath = options.category + '/' + options.ids + '/' + options.resource;
@@ -38,5 +42,5 @@ function filter(object, enc, next) {
 
 // make the request
 miss.pipe(request(urlString), split(), JSONStream.parse(), myFilter, process.stdout, function (err) {
-  if (err) return console.error('ERROR:', err)
-})
+  if (err) return console.error('ERROR: Please provide correct arguments \n', err)
+});
