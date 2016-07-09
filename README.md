@@ -27,14 +27,15 @@ const optionDefinitions = [
 
 options provide refined query paths
 
-if no options are given, api will retrieve information from all studies [http://www.ebi.ac.uk/eva/webservices/rest/v1/meta/studies/all](http://www.ebi.ac.uk/eva/webservices/rest/v1/meta/studies/all) 
+if no options are given,      
+api will retrieve information from all studies [http://www.ebi.ac.uk/eva/webservices/rest/v1/meta/studies/all](http://www.ebi.ac.uk/eva/webservices/rest/v1/meta/studies/all) 
 
-`ids` options that could be given under _meta_ `category`
-studies, species, files
-which could provide count or list of resources
+`ids` options that could be given under _meta_ `category`   
+studies, species, files   
+these options could provide count or list as resources
 
 
-`ids` options that could be given under _studies_ `category`
+`ids` option that could be given under _studies_ `category`       
 id of the study and summary of the selected as resources
 
 
