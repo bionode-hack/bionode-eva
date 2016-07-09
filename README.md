@@ -10,7 +10,7 @@ API notes: https://github.com/ebivariation/eva/wiki
 
 ### Example Requests
 1) node index.js --category meta --ids studies --resource all
-2) node index.js --category files --ids all --fields species=mmusculus_grcm38
+2) node index.js --category files --ids all --filters species=mmusculus_grcm38
 
 Steps to metadata
 -----------------

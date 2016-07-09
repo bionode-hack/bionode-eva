@@ -15,7 +15,7 @@ var options = commandLineArgs(optionDefinitions);
 //   go();
 // }
 
-if (!options.category && !options.ids && !options.resource && !options.fields) {
+if (!options.category && !options.ids && !options.resource && !options.filters) {
   options.category = 'meta';
   options.ids = 'studies';
   options.resource = 'all';
@@ -27,7 +27,7 @@ var urlObject = {
   protocol: 'http',
   host: 'www.ebi.ac.uk',
   pathname: '/eva/webservices/rest/v1/' + apiPath,
-  search: options.fields
+  search: options.filters
 };
 
 var urlString = url.format(urlObject);
