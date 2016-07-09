@@ -6,7 +6,13 @@
     "url": "https://github.com/bionode-hack/bionode-eva/issues"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "JSONStream": "^1.1.3",
+    "request": "^2.73.0",
+    "request-promise": "^3.0.0",
+    "split": "^1.0.0",
+    "split2": "^2.1.0",
+    "through2": "^2.0.1",
+    "url": "^0.11.0"
   },
   "homepage": "https://github.com/bionode-hack/bionode-eva#readme",
   "license": "ISC",
