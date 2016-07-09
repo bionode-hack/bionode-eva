@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var request = require('request');
 var url = require('url');
 var JSONStream = require('jsonstream');
