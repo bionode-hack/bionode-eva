@@ -22,6 +22,7 @@
   "dependencies": {
     "command-line-args": "^3.0.0",
     "jsonstream": "^1.0.3",
+    "mississippi": "^1.2.0",
     "request": "^2.73.0",
     "split2": "^2.1.0",
     "through2": "^2.0.1"

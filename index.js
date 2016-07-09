@@ -5,6 +5,7 @@ var JSONStream = require('jsonstream');
 var split = require('split2');
 var through = require('through2');
 var commandLineArgs = require('command-line-args');
+var miss = require('mississippi');
 var optionDefinitions = require('./optionDefinitions');
 
 // define the args we accept
@@ -36,8 +37,6 @@ function filter(object, enc, next) {
 }
 
 // make the request
-request(urlString)
-.pipe(split())
-.pipe(JSONStream.parse())
-.pipe(myFilter)
-.pipe(process.stdout);
+miss.pipe(request(urlString), split(), JSONStream.parse(), myFilter, process.stdout, function (err) {
+  if (err) return console.error('ERROR:', err)
+})
