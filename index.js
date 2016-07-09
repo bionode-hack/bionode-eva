@@ -6,15 +6,10 @@ var through = require('through2');
 var commandLineArgs = require('command-line-args');
 var optionDefinitions = require('./optionDefinitions');
 
+// define the args we accept
 var options = commandLineArgs(optionDefinitions);
 
-// validations
-// if (!options.resource) {
-//   console.error('Please provide a resource');
-// } else {
-//   go();
-// }
-
+// if no args are used, default to /meta/studies/all
 if (!options.category && !options.ids && !options.resource && !options.filters) {
   options.category = 'meta';
   options.ids = 'studies';
@@ -31,15 +26,15 @@ var urlObject = {
 };
 
 var urlString = url.format(urlObject);
-console.log('url', urlString, options);
 
+// example custom filter
 var myFilter = through.obj(filter);
-
 function filter(object, enc, next) {
   this.push(JSON.stringify(object));
   next();
 }
 
+// make the request
 request(urlString)
 .pipe(split())
 .pipe(JSONStream.parse())
