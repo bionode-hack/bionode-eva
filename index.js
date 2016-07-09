@@ -11,18 +11,26 @@ var optionDefinitions = require('./optionDefinitions');
 // define the args we accept
 var options = commandLineArgs(optionDefinitions);
 
-// if no args are used, default to /meta/studies/all
-if (!options.category && !options.ids && !options.resource && !options.filters) {
-  options.category = 'meta';
-  options.ids = 'studies';
-  options.resource = 'all';
-} else if (!options.category) {
-  console.error('Please provide a category');
-} else if (!options.ids) {
-  console.error('Please provide IDs');
+var apiPath;
+
+// check the args
+if (options.path) {
+  apiPath = options.path;
+} else {
+  // if no args are used, default to /meta/studies/all
+  if (!options.category && !options.ids && !options.resource && !options.filters) {
+    options.category = 'meta';
+    options.ids = 'studies';
+    options.resource = 'all';
+  } else if (!options.category) {
+    console.error('Please provide a category');
+  } else if (!options.ids) {
+    console.error('Please provide IDs');
+  } else {
+    apiPath = options.category + '/' + options.ids + '/' + options.resource;
+  }
 }
 
-var apiPath = options.category + '/' + options.ids + '/' + options.resource;
 
 var urlObject = {
   protocol: 'http',
