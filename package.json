@@ -1,0 +1,22 @@
+{
+  "name": "bionode-eva",
+  "description": "European Variant Archive (EVA) ------------------------------",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/bionode-hack/bionode-eva/issues"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  },
+  "homepage": "https://github.com/bionode-hack/bionode-eva#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bionode-hack/bionode-eva.git"
+  },
+  "scripts": {
+    "start": "nodemon --watch ./ index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
